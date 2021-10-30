@@ -7,10 +7,39 @@
 <body>
   Open the console for now
   <script>
+    const plays=["rock","paper","scissors"];
+    function computerPlay(){
+      return plays[Math.floor(Math.random()*3)];}
     function playRound(player,computer){
-      if (player==="rock" && computer==="paper"){
-        result="Lose"
-        return `You $(result)!$(computer) beats $(player)` 
+      if (plays.indexOf(player) == 1+ plays.indexOf(computer)){
+        result="Won"
+        return `You ${result}! ${player} beats ${computer}`; 
+      }
+      else if (plays.indexOf(computer)== 1+ plays.indexOf(player)){
+        result="Lost"
+        return `You ${result}! ${computer} beats ${player}` ;
+      }
+      else if (plays.indexOf(computer)==plays.indexOf(player)){
+        return "Its a draw!";
+      }
+      else if(plays.indexOf(computer)==2+plays.indexOf(player)){
+        result="Won"
+        return `You ${result}! ${player} beats ${computer}`;
+     }
+      else if(plays.indexOf(player)==2+plays.indexOf(computer)){
+        result="Lost"
+        return `You ${result}! ${computer} beats ${player}`;
+      }
+    }
+      
+    function game(){
+      for(let i=0;i<5;i++){
+        let player=prompt("Enter your play")
+        player=player.toLowerCase();
+        console.log(playRound(player,computerPlay()));
+      }
+    }
+    game();
   </script>
 </body>
 </html>
