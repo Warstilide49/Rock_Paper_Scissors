@@ -51,9 +51,14 @@ btns.forEach((btn) => {
   btn.addEventListener('mouseout',mouseout);
   btn.addEventListener('click',()=>{
     play=(btn.id);
-    verdict =playRound(play,c=computerPlay())[1] ;
+    final_result.textContent=playRound(play,c=computerPlay())[1] ;
     computer_play.textContent=`Computer's play: ${c}`;
-    result==="Won" ? player_score+=1 : result=="Lost" ? comp_score+=1 : null;
+    if (result=="Won" && Math.max(player_score,comp_score)!=5){
+      player_score+=1;
+    }
+    else if(result=="Lost" && Math.max(player_score,comp_score)!=5){
+      comp_score+=1;
+    }
     score.textContent=`Score- ${player_score}:${comp_score}`;
     if (comp_score>=5 || player_score>=5){
       computer_play.textContent='Game Over!';
@@ -62,10 +67,6 @@ btns.forEach((btn) => {
       btns.forEach((btn) => {
       btn.classList.add('gameover');
     });}
-    else{
-      final_result.textContent=verdict;
-      
-    }
   });
 });
 
