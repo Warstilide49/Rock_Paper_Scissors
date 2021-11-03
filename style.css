@@ -1,0 +1,54 @@
+body{
+  background-color:#77b5d9;  
+  font-family:Ubuntu, Cantarell;
+  color:#14397d;
+  display:flex;
+  flex-flow:column wrap;
+}
+
+.header{
+  font-weight:600;
+  display:flex;
+  justify-content:center;
+  margin-top:50px;
+}
+
+.button{
+  border:solid #14397d 2px;
+  background-color:#d7eaf3;
+  padding:5px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  display:flex;
+  flex-direction:row;
+  gap:20px;
+  font-size:20px;
+  justify-content:center;
+  margin:30px 0px;
+}
+
+.Result{
+  display:flex;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.mouseover{
+  box-shadow: 2px 4px 0.5rem rgba(0,0,0,0.8);
+  }
+  
+#Score{
+  display:flex;
+  justify-content:center;
+  margin-top:10px;
+}
+
+#Computer{
+  display:flex;
+  justify-content:center;
+  margin-top:10px;
+}
