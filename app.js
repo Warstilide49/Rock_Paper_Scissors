@@ -53,10 +53,16 @@ btns.forEach((btn) => {
     play=(btn.id);
     final_result.textContent=playRound(play,c=computerPlay())[1] ;
     result==="Won" ? player_score+=1 : result=="Lost" ? comp_score+=1 : null;
-    console.log(comp_score);
     computer_play.textContent=`Computer's play: ${c}`;
     score.textContent=`Score- ${player_score}:${comp_score}`;
+    if (comp_score>=5 || player_score>=5){
+      comp_score==5 ? str='You Lost!' : str='You Won!';
+      final_result.textContent=str+'\tPlease restart the game by reloading!'
+      btns.forEach((btn) => {
+      btn.classList.add('gameover');
+    });}
   });
 });
 
 
+   
