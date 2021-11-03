@@ -51,16 +51,20 @@ btns.forEach((btn) => {
   btn.addEventListener('mouseout',mouseout);
   btn.addEventListener('click',()=>{
     play=(btn.id);
-    final_result.textContent=playRound(play,c=computerPlay())[1] ;
-    result==="Won" ? player_score+=1 : result=="Lost" ? comp_score+=1 : null;
+    verdict =playRound(play,c=computerPlay())[1] ;
     computer_play.textContent=`Computer's play: ${c}`;
     score.textContent=`Score- ${player_score}:${comp_score}`;
     if (comp_score>=5 || player_score>=5){
+      computer_play.textContent='Game Over!';
       comp_score==5 ? str='You Lost!' : str='You Won!';
       final_result.textContent=str+'\tPlease restart the game by reloading!'
       btns.forEach((btn) => {
       btn.classList.add('gameover');
     });}
+    else{
+      final_result.textContent=verdict;
+      result==="Won" ? player_score+=1 : result=="Lost" ? comp_score+=1 : null;
+    }
   });
 });
 
